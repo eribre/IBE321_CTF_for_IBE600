@@ -1,0 +1,8 @@
+{% extends 'base.j2' %}
+
+{% block title %}You failed{% endblock %}
+
+{% block content %}
+	<h2>Your Username or Password was incorrect.</h2>
+	<a href="{{ url_for('uauth') }}">Please try again</a>
+{% endblock %}

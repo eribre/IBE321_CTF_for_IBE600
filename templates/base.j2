@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %} IBE321 CTF {% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href={{ url_for('static', filename
+        = "images/favicon.ico") }} />
+        <!--Bootstrap Stylesheet and Scripts Not used in this version-->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <!--Custom Stylesheet and JS-->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename = 'css/style.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            !window.jQuery &&
+                document.write(
+                    "<script src='{{ url_for('static', filename = 'js/jquery-3.6.4.min.js') }} '><\/script>",
+                );
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li class="nav-item">
+                        <a href="{{ url_for('index') }}">Main Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('uauth') }}">User Auth</a>
+                    </li>
+                    <li class="nav-item">
+                        <ul>
+                            <div class="dropdown">
+                                <button
+                                    onclick="myFunction(this)"
+                                    class="dropbtn"
+                                    id="dropbtn_1"
+                                >
+                                    SQL Injection
+                                    <i
+                                        class="fa fa-chevron-up rotate"
+                                        id="rotate_1"
+                                    ></i>
+                                </button>
+                                <div
+                                    class="dropdown-content"
+                                    id="drop_content_1"
+                                    style="display: none"
+                                >
+                                    <li>
+                                        <a href="{{ url_for('uauth1') }}"
+                                            >Level 1</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('uauth2') }}"
+                                            >Level 2</a
+                                        >
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <ul>
+                            <div class="dropdown">
+                                <button
+                                    onclick="myFunction(this)"
+                                    class="dropbtn"
+                                    id="dropbtn_2"
+                                >
+                                    Cryptography
+                                    <i
+                                        class="fa fa-chevron-up rotate"
+                                        id="rotate_2"
+                                    ></i>
+                                </button>
+                                <div
+                                    class="dropdown-content"
+                                    id="drop_content_2"
+                                    style="display: none"
+                                >
+                                    <li>
+                                        <a href="{{ url_for('cipher') }}"
+                                            >Level 1</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('hash') }}"
+                                            >Level 2</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('hash2' )}}"
+                                            >Level 3</a
+                                        >
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('about') }}">About</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src= {{ url_for('static', filename = "images/logo.png") }}
+            alt="Himolde Logo" style="height: auto; width: 120px; margin-right:
+            0.5em; filter: brightness(0) invert(1);" />
+        </header>
+        <div class="content margin">
+            <div class="grid-container">{% block content %} {% endblock %}</div>
+        </div>
+    </body>
+
+    <!-- Old Navbar
+	<nav>
+		<ul>
+        <li><a href="{{ url_for('index') }}">Main Page</a></li>
+		<li><a href="{{ url_for('uauth') }}">User Auth</a></li>
+		<li><a href="{{ url_for('cipher') }}">Cipher</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+    	</ul>
+	</nav>
+-->
+
+    <!-- W3 Navbar
+	<div class="w3-bar" style="background-color: #2E538D;">
+	  <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-mobile">Home</a>
+	  <a href="{{ url_for('uauth') }}" class="w3-bar-item w3-button w3-mobile">User Auth</a>
+	  <div class="w3-dropdown-hover w3-mobile">
+		<button class="w3-button">Cipher <i class="fa fa-caret-down"></i></button>
+	    	<div class="w3-dropdown-content w3-bar-block"style="background-color: #2E538D;">
+	      	<a href="{{ url_for('cipher') }}" class="w3-bar-item w3-button w3-mobile">Level 1</a>
+	      	<a href="#" class="w3-bar-item w3-button w3-mobile">Level 2</a>
+	      	<a href="#" class="w3-bar-item w3-button w3-mobile">Level 3</a>
+	    	</div>
+	  	</div>
+		<a href="{{ url_for('about') }}" class="w3-bar-item w3-button w3-mobile">About</a>
+	</div>
+	-->
+
+    <script src="{{ url_for('static', filename = 'js/dropdown.js') }}"></script>
+</html>

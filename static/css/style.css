@@ -1,0 +1,160 @@
+/*Tags*/
+body {
+    margin: 0;
+    font-family: arial, helvetica, sans-serif;
+}
+
+/* LOGIN */
+input[type="text"],
+select {
+    width: 50em;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="password"],
+select {
+    width: 50em;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border-radius: 4px;
+    max-width: 80%;
+}
+
+/* NAVBAR */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e538d;
+}
+
+.navbar {
+    overflow: hidden;
+    display: inline-block;
+    background-color: #2e538d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.dropdown {
+    display: flex;
+    overflow: hidden;
+    min-width: 149px;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    align-items: center;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn,
+.dropbtn:focus {
+    background-color: #213b60;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 45px;
+    background-color: #2e538d;
+    min-width: inherit;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #213b60;
+}
+
+/* Chevron flip */
+
+.rotate {
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.rotate.down {
+    -moz-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+/*Classes*/
+.margin {
+    margin: 0em 1em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-gap: 10px;
+}
+
+.grid-border-row {
+    border-top: 2px solid grey;
+    grid-column: 1/2;
+}
+
+.grid-item-login {
+    border-radius: 5px;
+    grid-row: 2;
+}
+
+/* Warning for smaller screens */
+.warning_size {
+    visibility: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .warning_size {
+        visibility: visible;
+    }
+}

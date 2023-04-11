@@ -1,0 +1,15 @@
+{% extends 'base.j2' %} {% block title %}SQL Return{% endblock %} {% block
+content %}
+
+<h2>You successfully caused SQL to return all users. Congrats</h2>
+
+<pre id="json"></pre>
+
+<p>The flag is: <strong>{sql_return}</strong></p>
+
+<script>
+    data = {{result | tojson}};
+    document.getElementById("json").innerHTML = JSON.stringify(data, null, 4);
+</script>
+
+{% endblock %}

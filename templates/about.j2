@@ -1,0 +1,20 @@
+{% extends 'base.j2' %} {% block title %}About{% endblock %} {% block content
+%}
+<div class="grid-item">
+    <h1>About</h1>
+    <p style="line-height: 1.5">
+        This is a Capture the Flag competition for students at Molde University
+        College. The competition is hosted by the IBE321 Course with computers
+        graciously loaned out by the IT department. The competition is open to
+        all students of IBE321 as well as any other students who wish to
+        participate.
+    </p>
+</div>
+<div class="grid-border-row"></div>
+
+<div class="grid-item" style="grid-row: 3">
+    <img src= {{ url_for('static', filename = "images/logo.png") }} alt="Himolde
+    Logo" style="max-width: 50%; height: auto;">
+</div>
+<!--The secret user is "secUsr" with password "blowfish" -->
+{% endblock %}

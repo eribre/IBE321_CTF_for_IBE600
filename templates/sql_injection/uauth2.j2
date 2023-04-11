@@ -1,0 +1,36 @@
+{% extends 'base.j2' %} {% block title %}Login{% endblock %} {% block content
+%}
+<div class="grid-item">
+    <h1>Login - SQL Injection 2</h1>
+    <p>Please enter your username and password.</p>
+</div>
+<div class="grid-item-login">
+    <form action="{{url_for('confirm2')}}" method="post">
+        <fieldset>
+            <label for="username"
+                >Username:
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter Username..."
+                    value=""
+                    required
+                />
+            </label>
+            <br />
+            <label for="passwd"
+                >Password:
+                <input
+                    type="password"
+                    name="passwd"
+                    placeholder="Enter Password..."
+                    value=""
+                    required
+                />
+            </label>
+            <br />
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
