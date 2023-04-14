@@ -22,6 +22,7 @@ from base import *
 # from Level3 import *
 
 from crypto import *
+from traversal import *
 from pass_crack import *
 from sql_injection import *
 
@@ -31,3 +32,10 @@ debug = True
 
 if __name__ == "__main__":
     app.run(host=host, port=port, debug=debug)
+
+# * All computer IPs
+# app.run(host="0.0.0.0", port=port)
+
+# * Localhost
+# if __name__ == "__main__":
+#    app.run(port=port)

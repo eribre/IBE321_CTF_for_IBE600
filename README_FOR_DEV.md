@@ -16,8 +16,8 @@ The structure of the app itself is as follows:
 
     .
     ├── .env	# environment variables imported by flask
-    ├── run.py	# run file for the app:  "python run.py"
-    ├── main.py
+    ├── main.py	# main file for the app:  "python main.py"
+    ├── base.py # base file for unseparated challenges
     ├── helper.py # helper/repeat code functions
     ├── dbconnection.py # sqlite/database connection
     ├── crypto.py
@@ -55,7 +55,7 @@ The structure of the app itself is as follows:
 
 There are also the files "dbcheck.py" and "dbreset.py" which are used to check the database and reset it. They are not used by the app itself, but are used by the admin to check that all rows in the table are correct and if not, to reset the table.
 
-Other files such as "replit.nix" are from replit and are not relevant for the app itself.
+Other files such as ".replit" are from replit and are not relevant for the app itself. The may not be present in the final version of the repo.
 
 Before running the app, you need to install the dependencies listed in pyproject.toml. I recommend using poetry for this. You can install poetry with "pipx install poetry" (if pipx is installed) and then run "poetry install" in the directory to install the dependencies. You should then see a new directory called ".venv" in the directory. This is the virtual environment for the app. You can activate it with "poetry shell" and then run the app with "python run.py".
 

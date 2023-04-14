@@ -148,6 +148,11 @@ header {
     grid-row: 2;
 }
 
+.grid-item-base64 {
+    grid-row: 2;
+    overflow-wrap: anywhere;
+}
+
 /* Warning for smaller screens */
 .warning_size {
     visibility: hidden;

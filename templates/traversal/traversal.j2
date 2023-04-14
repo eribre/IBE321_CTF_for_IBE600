@@ -1,0 +1,25 @@
+{% extends 'base.j2' %} {% block title %}Login{% endblock %} {% block content
+%}
+<div class="grid-item">
+    <h1>File Viewer</h1>
+    <p>Please enter the file which you would like to view.</p>
+</div>
+<div class="grid-item-login">
+    <form action="{{url_for('traversal_redirect')}}" method="post">
+        <fieldset>
+            <label for="username"
+                >File:
+                <input
+                    type="text"
+                    name="file"
+                    placeholder="Enter Filename..."
+                    value=""
+                    required
+                />
+            </label>
+            <br />
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

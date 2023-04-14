@@ -7,13 +7,6 @@ from __main__ import (
     flash,
     redirect,
     re,
-    Database,
-    storedUser,
-    storedPass,
-    secUser,
-    secPass,
-    hintUser,
-    hintPass,
 )
 
 
@@ -55,13 +48,3 @@ def base64():
 @app.route("/admin")
 def admin():
     return render_template("admin.j2")
-
-
-# ! app.run moved to run.py
-
-# * All computer IPs
-# app.run(host="0.0.0.0", port=port)
-
-# * Localhost
-# if __name__ == "__main__":
-#    app.run(port=port)
