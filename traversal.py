@@ -27,6 +27,6 @@ def traversal_redirect():
 @app.route("/traversal/file/<path:directory>")
 def traversal_conf(directory):
     if directory == "etc/shadow":
-        return render_template("traversal/directory.j2")
+        return render_template("traversal/directory.j2", usrInp=directory)
     else:
-        return render_template("traversal/dir_fail.j2")
+        return render_template("traversal/dir_fail.j2", usrInp=directory)

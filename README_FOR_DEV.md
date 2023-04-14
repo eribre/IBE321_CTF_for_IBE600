@@ -23,6 +23,7 @@ The structure of the app itself is as follows:
     ├── crypto.py
     ├── pass_crack.py
     ├── sql_injection.py
+    ├── traversal.py
     ├── templates	# jinja2 template files (.j2)
     │   ├── base.j2
     │   ├── index.j2
@@ -39,6 +40,9 @@ The structure of the app itself is as follows:
     │   │   ├── uauth1.j2
     │   │   ├── uauth2.j2
     │   │   ├── ...
+    │   ├── Traversal
+    │   │   ├── dir_fail.j2
+    │   │   ├──...
     ├── static
     │   ├── css
     │   │   ├── style.css
