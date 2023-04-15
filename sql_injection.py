@@ -15,7 +15,13 @@ from __main__ import (
     hintUser,
     hintPass,
 )
-from helper import dropProtection, orProtection, antiPassCrack
+from helper import (
+    dropProtection,
+    orProtection,
+    antiPassCrack,
+    uauthProtect,
+    sql2Protection,
+)
 
 
 # * Sql injection level 1
@@ -31,12 +37,10 @@ def confirm1():
     inpPass = request.form["passwd"]
     print(f"{inpUser} as input for sql injection level 1.")
 
-    # Block DROP
-    if dropProtection(inpUser):
-        return "Naughty naughty!  :D"
-
-    if orProtection(inpUser):
-        return "'or' statements aren't needed quite yet.  ;D"
+    # * Block DROP and OR (and more dangerous sql statements)
+    ret = uauthProtect(inpUser)
+    if ret[0]:
+        return f"{ret[1]} statements aren't needed here.  ;D"
 
     # Connect to DB
     try:
@@ -54,12 +58,6 @@ def confirm1():
             # * password cracking challenge
             if ans := antiPassCrack(result[0][1]):
                 return ans
-            # elif result[0][1] == "Jonathan":
-            #    return 'You\'ve the right idea, but maybe try a more "admin"-like username?'
-            # elif result[0][1] == "Roger":
-            #    return 'You\'ve the right idea, but maybe try a more "rooted" username?'
-            # elif result[0][1] == "secUsr":
-            #    return 'You\'ve the right idea, but maybe try a more "admin"-like or "rooted" username?'
 
             # * root'-- or admin'-- sql injection challenge
             elif result[0][1] == "root" or result[0][1] == "admin":
@@ -104,9 +102,10 @@ def confirm2():
     inpPass = request.form["passwd"]
     print(f"{inpUser} as input for sql injection level 2.")
 
-    # Block DROP
-    if dropProtection(inpUser):
-        return "Naughty naughty!  :D"
+    # * Block DROP (and more dangerous sql statements)
+    ret = sql2Protection(inpUser)
+    if ret[0]:
+        return f"{ret[1]} statements aren't needed here.  ;D"
 
     # Connect to DB
     try:
@@ -123,17 +122,10 @@ def confirm2():
                 checkList = any("root" in x for x in result) and any(
                     "admin" in x for x in result
                 )
-                # checkList2 = any("admin" in x for x in result)
-                if checkList:  # 1 and checkList2:
+                if checkList:
                     return render_template("sql_injection/sql_return.j2", result=result)
             except:
                 pass
-
-            # try:
-            #    if result[0][1] == "admin" and result[1][1] == "secUsr":
-            #        return render_template("sql_injection/sql_return.j2", result=result)
-            # except:
-            #    pass
 
             if result is None:
                 return render_template("fail.j2")

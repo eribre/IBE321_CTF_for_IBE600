@@ -11,7 +11,7 @@ from __main__ import (
     hintPass,
 )
 
-from helper import dropProtection, orProtection
+from helper import dropProtection, orProtection, uauthProtect
 
 
 # Password-Breaking Challenge
@@ -32,11 +32,14 @@ def confirm():
     # if re.search("drop", inpUser, re.IGNORECASE) is not None:
     #    return "Naughty naughty!  :D"
 
-    # * Block DROP and OR
-    if dropProtection(inpUser):
-        return "Naughty naughty!  :D"
-    if orProtection(inpUser):
-        return "'or' statements aren't needed quite yet.  ;D"
+    # * Block DROP and OR (and more dangerous sql statements)
+    # if dropProtection(inpUser):
+    #    return "Naughty naughty!  :D"
+    # if orProtection(inpUser):
+    #    return "'or' statements aren't needed quite yet.  ;D"
+    ret = uauthProtect(inpUser)
+    if ret[0]:
+        return f"{ret[1]} statements aren't needed here.  ;D"
 
     # Connect to DB
     try:
