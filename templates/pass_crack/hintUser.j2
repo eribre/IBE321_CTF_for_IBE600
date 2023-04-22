@@ -1,11 +1,14 @@
 {% extends 'base.j2' %} {% block title %}Hint{% endblock %} {% block content
 %}
-<h2>Hello {{ username }}!</h2>
-<p>* Pretend that this is a professional email server *</p>
-<p>
-    Last email to <em style="color: blue"><u>emil@ithelpdesk.no</u></em
-    >; <br />Did that new manager, Roger, request the latest software build yet?
-    <br />
-    Also, did you give him the new super secret passphrase?
-</p>
+
+<div class="grid-item">
+    <h2>Hello {{ username }}!</h2>
+    <p>* Pretend that this is a professional email server *</p>
+    <p>
+        Last email to <em style="color: blue"><u>emil@ithelpdesk.no</u></em
+        >; <br />Did that new manager, Roger, request the latest software build yet?
+        <br />
+        Also, did you give him the new super secret passphrase?
+    </p>
+</div>
 {% endblock %}
