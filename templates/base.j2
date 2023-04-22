@@ -120,9 +120,11 @@
                     </li>
                 </ul>
             </nav>
-            <img src= {{ url_for('static', filename = "images/logo.png") }}
-            alt="Himolde Logo" style="height: auto; width: 120px; margin-right:
-            0.5em; filter: brightness(0) invert(1);" />
+            <a href="https://www.youtube.com/watch?v=ek23r5w_Ltk">
+                <img src= {{ url_for('static', filename = "images/logo.png") }}
+                alt="Himolde Logo" style="height: auto; width: 120px; margin-right:
+                0.5em; filter: brightness(0) invert(1);" />
+            </a>
         </header>
         <div class="content margin">
             <div class="grid-container">{% block content %} {% endblock %}</div>
