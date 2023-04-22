@@ -32,7 +32,7 @@ from sql_injection import *
 
 
 if __name__ == "__main__":
-    app.run(host=81, port="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", port=81, debug=True)
 
 # * All computer IPs
 # app.run(host="0.0.0.0", port=81)
