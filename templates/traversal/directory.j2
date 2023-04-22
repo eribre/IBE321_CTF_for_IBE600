@@ -7,6 +7,21 @@
 		<h1>Good job!</h1>
 		<p>With your input "{{usrInp}}", if this had been a real site <br>
 		you would've gotten the shadow file!  :D</p>
-		<p>The flag is: {dir_trav}</p>
+		<p>The flag is: {dir_trav}</p> <br>
+
+		<p><strong>If you're curious:</strong></p>
+		<p> In this "simulation" the user input is added to the string:
+			<em>"/home/ctf/traversal/"</em>. <br>
+			An example of this would be:
+			<em>"/home/ctf/traversal/image.png"</em>. <br>
+			Then the file is opened and read. <br> <br>
+			<strong>But this can be exploited!</strong> <br> <br>
+			If the user input is:
+			<em>"../../../etc/shadow"</em> <br>
+			then the 3 "../" will "cancel out" the first three
+			directories in the string, <br>
+			leaving us with: <em>"/etc/shadow"</em>. <br>
+			Then the file is opened and read. <br>
+		</p>
 	</div>
 {% endblock %}
