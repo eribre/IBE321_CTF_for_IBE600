@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 import re
 
+# from dotenv import load_dotenv
+
+# load_dotenv()
+
+
 # * Import Database class from dbconnection.py
 from dbconnection import Database
 
@@ -30,7 +35,7 @@ host = "0.0.0.0"
 debug = True
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, debug=debug)
+    app.run(host, port, debug)
 
 # * All computer IPs
 # app.run(host="0.0.0.0", port=port)

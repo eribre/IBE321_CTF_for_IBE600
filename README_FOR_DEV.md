@@ -64,3 +64,16 @@ Other files such as ".replit" are from replit and are not relevant for the app i
 Before running the app, you need to install the dependencies listed in pyproject.toml. I recommend using poetry for this. You can install poetry with "pipx install poetry" (if pipx is installed) and then run "poetry install" in the directory to install the dependencies. You should then see a new directory called ".venv" in the directory. This is the virtual environment for the app. You can activate it with "poetry shell" and then run the app with "python run.py".
 
 **NB:** The code uses features from python 3.10, so you need to use python 3.10 or higher to run the app. The pyproject.toml file specifies the python version to be 3.10, so poetry should warn you if you are using an incompatible version.
+
+
+## Running the server
+
+To run the server, you need to run "python main.py" in the directory. This will start the server on localhost:81. You can then access the app in your browser at localhost:81.
+
+For access from outside the server pc, just replace "localhost" with the ip address of the server pc. Finding the ip will vary depending on your operating system.
+
+When you are ready to deploy to students, you should change debug to False in main.py. This will disable the debug mode.
+
+If there are a lot of students who will be using the app, you should consider using gunicorn to run the app.
+
+If running on Replit, you can ignore the advice above, and just run the app with the big green "Run" button. Still should change debug to False in main.py before giving access to students though.
