@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 import re
+
+# * Import Database class from dbconnection.py
 from dbconnection import Database
-from helper import dropProtection
 
 # Even though some imports are not used in this specific file, they may be used in other files.
 
@@ -15,12 +16,10 @@ hintPass = "12345"
 
 app = Flask(__name__)
 
+# base file
 from base import *
 
-# from Level1 import *
-# from Level2 import *
-# from Level3 import *
-
+# files separated by category/challenge
 from crypto import *
 from traversal import *
 from pass_crack import *
