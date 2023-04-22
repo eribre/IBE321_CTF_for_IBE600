@@ -30,16 +30,13 @@ from traversal import *
 from pass_crack import *
 from sql_injection import *
 
-port = 81
-host = "0.0.0.0"
-debug = True
 
 if __name__ == "__main__":
-    app.run(host, port, debug)
+    app.run(host=81, port="0.0.0.0", debug=True)
 
 # * All computer IPs
-# app.run(host="0.0.0.0", port=port)
+# app.run(host="0.0.0.0", port=81)
 
 # * Localhost
 # if __name__ == "__main__":
-#    app.run(port=port)
+#    app.run(port=81)
