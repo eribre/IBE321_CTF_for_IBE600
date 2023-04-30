@@ -55,7 +55,7 @@ def confirm1():
             if result is None:
                 return render_template("fail.j2")
 
-            # * password cracking challenge
+            # * password cracking challenge blocker
             if ans := antiPassCrack(result[0][1]):
                 return ans
 
@@ -130,7 +130,7 @@ def confirm2():
             if result is None:
                 return render_template("fail.j2")
 
-            # * password cracking challenge
+            # * password cracking challenge blocker
             if ans := antiPassCrack(result[0][1]):
                 return ans
 
@@ -141,9 +141,6 @@ def confirm2():
             # * fail condition
             else:
                 return render_template("fail.j2")
-
-        # All this is very messy, but it makes it so that users can perform basic SQL injection
-        # using "username' -- " without double quotes
 
     # incase kind of break
     except IndexError as indErr:

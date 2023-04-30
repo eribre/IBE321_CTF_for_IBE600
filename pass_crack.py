@@ -28,15 +28,7 @@ def confirm():
     inpPass = request.form["passwd"]
     print(f"{inpUser} as input for password cracking challenge.")
 
-    # Block DROP
-    # if re.search("drop", inpUser, re.IGNORECASE) is not None:
-    #    return "Naughty naughty!  :D"
-
     # * Block DROP and OR (and more dangerous sql statements)
-    # if dropProtection(inpUser):
-    #    return "Naughty naughty!  :D"
-    # if orProtection(inpUser):
-    #    return "'or' statements aren't needed quite yet.  ;D"
     ret = uauthProtect(inpUser)
     if ret[0]:
         return f"{ret[1]} statements aren't needed here.  ;D"
@@ -60,15 +52,13 @@ def confirm():
                 return render_template("pass_crack/hintUser.j2", username=hintUser)
             elif result[0][1] == "Roger":
                 return render_template("pass_crack/success.j2", username=storedUser)
+            # * check for bad programming challenge
             elif result[0][1] == "secUsr":
                 return render_template("pass_crack/super_secret.j2", username=secUser)
 
             # * fail condition
             else:
                 return render_template("fail.j2")
-
-        # All this is very messy, but it makes it so that users can perform basic SQL injection
-        # using "username' -- " without double quotes
 
     # incase kind of break
     except IndexError as indErr:
