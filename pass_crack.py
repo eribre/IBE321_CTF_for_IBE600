@@ -1,4 +1,4 @@
-from __main__ import (
+from main import (
     app,
     render_template,
     request,

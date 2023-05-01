@@ -1,4 +1,4 @@
-from __main__ import re
+from main import re
 
 
 # Individual protection functions

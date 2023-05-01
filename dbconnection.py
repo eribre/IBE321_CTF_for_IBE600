@@ -11,10 +11,10 @@ class Database(object):
 
     # empty placeholders by default to allow for unsafe queries (sql injection)
     def __call__(self, query, placeholders=""):
-        c = self.conn.cursor()
+        cursor = self.conn.cursor()
         try:
-            result = c.execute(query, placeholders)
+            result = cursor.execute(query, placeholders)
             self.conn.commit()
-        except Exception as e:
-            result = e
+        except Exception as ex:
+            result = ex
         return result

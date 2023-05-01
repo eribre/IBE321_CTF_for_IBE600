@@ -1,19 +1,6 @@
-from __main__ import (
+from main import (
     app,
-    Flask,
     render_template,
-    request,
-    url_for,
-    flash,
-    redirect,
-    re,
-    Database,
-    storedUser,
-    storedPass,
-    secUser,
-    secPass,
-    hintUser,
-    hintPass,
 )
 
 
