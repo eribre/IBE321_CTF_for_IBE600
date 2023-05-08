@@ -127,7 +127,19 @@
             </a>
         </header>
         <div class="content margin">
-            <div class="grid-container">{% block content %} {% endblock %}</div>
+            <div class="grid-container">
+            {% block content %} {% endblock %}
+            <div class="grid-item" style="grid-row: 3">
+                <p class="warning_size">
+                If you can see me, then your browser window or display is too small.
+                <br />
+                Please consider making the browser window bigger or change the device.
+                :D
+                <br />
+                I will disappear once the window or display is large enough!
+                </p>
+            </div>
+            </div>
         </div>
     </body>
 
