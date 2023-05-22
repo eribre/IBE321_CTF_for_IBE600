@@ -17,9 +17,13 @@ def traversal():
 def traversal_confirm():
     inp_path = request.args["file"]
 
+    # count number of ../
     count_dots = inp_path.count("../")
+    # count number of /etc/shadow
     count_path = inp_path.count("/etc/shadow")
+    # check if last two items in path are etc/shadow
     check_last = inp_path.split("/")[-2:] == ["etc", "shadow"]
+    # check if path contains any other directories than ../, etc, shadow
     check_random = not any(
         [x for x in inp_path.split("/") if x not in ["..", "etc", "shadow"]]
     )
